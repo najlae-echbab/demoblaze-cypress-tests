@@ -1,0 +1,28 @@
+name: DemoBlaze UI Tests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+  push:
+    branches: [main]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run DemoBlaze tests
+        run: npm run test:demoblaze
