@@ -1,0 +1,10 @@
+{
+  "order": {
+    "name": "Buyer Test",
+    "country": "Morocco",
+    "city": "Casablanca",
+    "card": "4111111111111111",
+    "month": "03",
+    "year": "2030"
+  }
+}
